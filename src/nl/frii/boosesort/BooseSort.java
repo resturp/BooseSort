@@ -13,7 +13,7 @@ public class BooseSort {
 
     /**
      * Sort an array, comparing pairwise.
-     * Assuming each itteration a longer sorted 
+     * Assuming each iteration a longer sorted 
      * sublist until the complete list is sorted.
      * Without recursion...
      * 
@@ -28,9 +28,9 @@ public class BooseSort {
     
     public static int[] sort(int[] toSort) {
         
-        //calc the longest sublist;
+        //calc the longest sublist;                             //N number of elements
         int longestSublist = 1;        
-        while (longestSublist*2 < toSort.length) {
+        while (longestSublist*2 < toSort.length) {              //log(N)
             longestSublist *=2;
         }
         
@@ -39,10 +39,10 @@ public class BooseSort {
         
         //double the sublistlength untill we reached the longest sublist
         int subListLength = 1;
-        while (subListLength <= longestSublist) {
+        while (subListLength <= longestSublist) {               
             int offset = 0; //start of the left_part to merge
 
-            while (offset < toSort.length) { 
+            while (offset < toSort.length) {                    
                 int left = 0, right = 0, partitionSize = 0;
                 
                 //the partition size to sort. prevent sorting items after
@@ -53,7 +53,7 @@ public class BooseSort {
                     partitionSize = subListLength * 2; 
                 }
                 
-                for (int t = 0; t < partitionSize ; t++) {
+                for (int t = 0; t < partitionSize ; t++) {      
                     //no more element in the left sublist?
                     if (left >= subListLength) {
                         //take element from right sublist
