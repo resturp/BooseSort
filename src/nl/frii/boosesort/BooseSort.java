@@ -33,8 +33,10 @@ public class BooseSort {
      * Sort an array, comparing pairwise. Assuming each iteration a longer
      * sorted sublist until the complete list is sorted. Without recursion...
      *
-     * x x x x x x x
-     * |__| |__| |__| | |_____| |___| |__________|
+     * x  x x  x x  x x
+     * |__| |__| |__| | 
+     *  |_____|   |___| 
+     *   |__________|
      *
      * @param toSort array to sort
      * @return sorted array
